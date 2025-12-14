@@ -1,17 +1,7 @@
 {
+  "buildCommand": "echo 'Build complete'",
+  "outputDirectory": "Frontend",
   "rewrites": [
-    { "source": "/", "destination": "/Frontend/standalone.html" },
-    { "source": "/(.*)", "destination": "/Frontend/standalone.html" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        }
-      ]
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

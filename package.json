@@ -1,0 +1,13 @@
+{
+  "name": "emotionye",
+  "version": "1.0.0",
+  "description": "AI-powered emotional analysis with Quranic guidance",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Build complete'",
+    "start": "echo 'Starting EmotionEye'"
+  },
+  "keywords": ["emotion", "ai", "quranic", "analysis"],
+  "author": "Your Name",
+  "license": "MIT"
+}

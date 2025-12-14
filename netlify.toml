@@ -1,0 +1,7 @@
+[build]
+  publish = "Frontend"
+
+[[redirects]]
+  from = "/*"
+  to = "/standalone.html"
+  status = 200

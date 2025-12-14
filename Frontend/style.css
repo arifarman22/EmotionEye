@@ -1,0 +1,345 @@
+/* Global Styles */
+:root {
+  --bg-primary: #0a0f0d;
+  --bg-secondary: #111b17;
+  --bg-tertiary: #0b3d39;
+  --accent-primary: #00d9a6;
+  --accent-secondary: #004d40;
+  --text-primary: #e2e2e2;
+  --text-secondary: #a0a0a0;
+  --border-color: #2e3c37;
+  --user-msg-bg: #005c4b;
+  --bot-msg-bg: #202c33;
+  --sidebar-width: 280px;
+  --border-radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* App Layout */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar Styles */
+.sidebar-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.app-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.sidebar-header h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: var(--accent-primary);
+}
+
+.sidebar-header p {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.stats-panel {
+  background-color: rgba(11, 61, 57, 0.3);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.stats-panel h3 {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.trend-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--accent-secondary);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.trend-button:hover {
+  background-color: #00695c;
+  transform: translateY(-2px);
+}
+
+.app-info {
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* Main Content Styles */
+.chat-header {
+  padding: 20px 30px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.chat-header h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.chat-header p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.chat-box {
+  flex: 1;
+  padding: 20px 30px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: rgba(11, 61, 57, 0.05);
+}
+
+.welcome-message {
+  background: linear-gradient(135deg, var(--accent-secondary), #00695c);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.welcome-message h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.welcome-message p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Message Styles */
+.chat-message {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user {
+  align-self: flex-end;
+  background-color: var(--user-msg-bg);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: var(--bot-msg-bg);
+  color: var(--text-primary);
+  border-bottom-left-radius: 4px;
+}
+
+/* Chat Form */
+.chat-form {
+  display: flex;
+  padding: 20px 30px;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+#user-input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+  background-color: rgba(31, 47, 45, 0.5);
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#user-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(0, 217, 166, 0.2);
+}
+
+button[type="submit"] {
+  background-color: var(--accent-primary);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-secondary);
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 217, 166, 0.3);
+}
+
+/* Chart Modal */
+.chart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 700px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  font-size: 18px;
+  color: var(--accent-primary);
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: var(--text-primary);
+}
+
+/* Scrollbar */
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+  }
+  
+  .app-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+  }
+  
+  .stats-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .stat-item {
+    flex: 1;
+    min-width: 120px;
+  }
+}

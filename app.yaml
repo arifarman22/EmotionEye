@@ -1,0 +1,17 @@
+runtime: python311
+
+env_variables:
+  FLASK_ENV: production
+  FLASK_DEBUG: False
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 5
+  target_cpu_utilization: 0.6
+
+resources:
+  cpu: 1
+  memory_gb: 4
+  disk_size_gb: 10
+
+entrypoint: gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
